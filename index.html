@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Juego: piedra, papel o tijera</title>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<main id="main">
+		<section class="indicadores">
+			<article class="contador">
+				<span>Tú (X)</span>
+				<div class="separador">
+					<span id="txt-contador-usuario">0</span>-<span id="txt-contador-sistema">0</span>
+				</div>
+				<span>Sistema (O)</span>
+			</article>
+			<article id="contenedor-mensaje" class="mensaje">
+				<p id="txt-mensaje">Has ganado!</p>
+				<button id="btn-volver-a-jugar">Volver a jugar</button>
+			</article>
+		</section>
+		<section id="cuadricula" class="cuadricula">
+			<button class="casilla" data-index="0"></button>
+			<button class="casilla" data-index="1"></button>
+			<button class="casilla" data-index="2"></button>
+			<button class="casilla" data-index="3"></button>
+			<button class="casilla" data-index="4"></button>
+			<button class="casilla" data-index="5"></button>
+			<button class="casilla" data-index="6"></button>
+			<button class="casilla" data-index="7"></button>
+			<button class="casilla" data-index="8"></button>
+		</section>
+	</main>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

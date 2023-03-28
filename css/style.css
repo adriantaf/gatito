@@ -1,0 +1,147 @@
+*:after,
+*:before,
+* {
+	box-sizing: border-box;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'DM Mono', monospace;
+}
+
+body {
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	min-height: 100vh;
+	max-width: calc(100vw - 40px);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: row;
+	padding-top: calc((100vh - 500px)/2);
+}
+
+main > section.indicadores {
+	margin-right: 5vw;
+}
+
+main > section.indicadores > article {
+	margin-bottom: 1.5em;
+}
+main > section.indicadores > article:last-child {
+	margin-bottom: 0;
+}
+
+main > section.indicadores > article.contador {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: .2em;
+	border: 2px solid #444;
+	box-shadow: 3px 4px 0px #00000050;
+	background-color: #fff;
+	padding: 1em;
+	font-size: 1.15em;
+	font-weight: 500;
+}
+
+main > section.indicadores > article.contador > div.separador {
+	font-size: 1.2em;
+	color: purple;
+	font-weight: 500;
+	margin: 0 1em;
+}
+
+main > section.indicadores > article.mensaje {
+	text-align: center;
+	font-size: 1.5em;
+	display: none;
+}
+main > section.indicadores > article.mensaje.visible {
+	display: block;
+}
+
+main > section.indicadores > article.mensaje > button {
+	color: #fff;
+	font-size: .6em;
+	font-weight: 600;
+	background-color: blueviolet;
+	border-radius: .2em;
+	border: 2px solid #444;
+	box-shadow: 3px 3px 0px #00000050;
+	margin-top: 1em;
+	padding: .5em 1em;
+}
+
+main > section.indicadores > article.mensaje > button:active {
+	box-shadow: none;
+	transition: all .15s ease-in;
+}
+
+main > section.cuadricula {
+	max-width: 100%;
+	width: 500px;
+	aspect-ratio: 1/1;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+main > section.cuadricula > button.casilla {
+	width: calc((100% - 20px) / 3);
+	aspect-ratio: 1/1;
+	font-size: 4em;
+	border-radius: .07em;
+	border: 2px solid #444;
+	box-shadow: 3px 4px 0px #00000050;
+	background-color: #fff;
+}
+main > section.cuadricula > button.casilla.ganadora {
+	background-color: blue;
+	color: #fff;
+	box-shadow: none;
+	transition: box-shadow .3s ease-in;
+}
+
+
+@media screen and (max-width: 930px) {
+	main {
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 1em 0;
+	}
+
+	main > section.indicadores {
+		max-width: 100%;
+		width: 500px;
+		margin-right: 0;
+		margin-bottom: 3em;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	main > section.indicadores > article.contador {
+		padding: 3.5vw;
+		font-size: 4.5vw;
+		font-weight: 500;
+	}
+
+	main > section.indicadores > article.contador > div.separador {
+		font-size: 4.8vw;
+		margin: 0 .7em;
+		font-weight: 500;
+	}
+
+	main > section.indicadores > article.mensaje {
+		font-size: 1.2em;
+	}
+
+	main > section.cuadricula > button.casilla {
+		font-size: 17vw;
+	}
+}
