@@ -3,38 +3,187 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Juego del gatito</title>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Gatito</title>
+	<link rel="shortcut icon" href="./img/icono.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
+	<header class="header">
+		<div class="cont-limite">
+			<div class="logo">
+				<img src="./img/icono.png" alt="Icono de un leon" class="logo__icono">
+				<span class="logo__texto">Gatito</span>
+			</div>
+			<div class="botones">
+				<button id="btn-historial" class="boton"><i class="fi fi-rr-ballot"></i></button>
+				<button id="btn-ajustes" class="boton"><i class="fi fi-rr-settings"></i></button>
+			</div>
+		</div>
+	</header>
+
 	<main id="main">
 		<section class="indicadores">
-			<article class="contador">
-				<span>Tú (X)</span>
-				<div class="separador">
-					<span id="txt-contador-usuario">0</span>-<span id="txt-contador-sistema">0</span>
+			<article class="bloque">
+				<div class="avatar">
+					<img src="./img/avatar/ojo.png" alt="" class="img">
+					<span class="nombre">Bot</span>
+					<span id="txt-simbolo-sistema" class="simbolo">0</span>
 				</div>
-				<span>Sistema (O)</span>
+				<div class="marcador">
+					<span id="txt-contador-usuario">000</span>-<span id="txt-contador-sistema">000</span>
+				</div>
+				<div class="avatar">
+					<img src="./img/avatar/hacker.png" alt="" class="img">
+					<span id="txt-nombre-usuario" class="nombre">Adrian TafoyaMorales</span>
+					<span id="txt-simbolo-usuario" class="simbolo">X</span>
+				</div>
 			</article>
 			<article id="contenedor-mensaje" class="mensaje">
 				<p id="txt-mensaje">Has ganado!</p>
 				<button id="btn-volver-a-jugar">Volver a jugar</button>
 			</article>
 		</section>
-		<section id="cuadricula" class="cuadricula">
-			<button class="casilla" data-index="0"></button>
-			<button class="casilla" data-index="1"></button>
-			<button class="casilla" data-index="2"></button>
-			<button class="casilla" data-index="3"></button>
-			<button class="casilla" data-index="4"></button>
-			<button class="casilla" data-index="5"></button>
-			<button class="casilla" data-index="6"></button>
-			<button class="casilla" data-index="7"></button>
-			<button class="casilla" data-index="8"></button>
+		<div class="contenedor-cuadricula">
+			<section id="cuadricula" class="cuadricula">
+				<button class="casilla" data-index="0"></button>
+				<button class="casilla" data-index="1"></button>
+				<button class="casilla" data-index="2"></button>
+				<button class="casilla" data-index="3"></button>
+				<button class="casilla" data-index="4"></button>
+				<button class="casilla" data-index="5"></button>
+				<button class="casilla" data-index="6"></button>
+				<button class="casilla" data-index="7"></button>
+				<button class="casilla" data-index="8"></button>
+			</section>
+		</div>
+
+		<section class="modal" id="modal-ajustes">
+			<article class="contenedor">
+				<div class="cont-input">
+					<h2>Ajustes</h2>
+					<button id="btn-guardar-cambios" class="button">Guardar cambios</button>
+				</div>
+				<div class="cont-input">
+					<label for="input-nombre-usuario" class="label">Nombre:</label>
+					<input type="text" name="" id="input-nombre-usuario" class="input" spellcheck="false">
+				</div>
+				<h3>Tema</h3>
+				<div class="group-buttons tres">
+					<button class="button"><i class="fi fi-rr-brightness"></i></button>
+					<button class="button"><i class="fi fi-rr-moon"></i></button>
+					<button class="button"><i class="fi fi-rr-sparkles"></i></button>
+				</div>
+				<h3>Personaje</h3>
+				<div class="group-buttons">
+					<button class="button">
+						<img src="./img/avatar/cyborg.png" alt="Icono de Cyborg" class="img">
+					</button>
+					<button class="button">
+						<img src="./img/avatar/hacker.png" alt="Icono de Hacker" class="img">
+					</button>
+					<button class="button">
+						<img src="./img/avatar/hombre.png" alt="Icono de Hombre" class="img">
+					</button>
+					<button class="button">
+						<img src="./img/avatar/mujer.png" alt="Icono de Mujer" class="img">
+					</button>
+					<button class="button">
+						<img src="./img/avatar/seguridad.png" alt="Icono de Seguridad" class="img">
+					</button>
+				</div>
+				<h3>Simbolo del usuario</h3>
+				<div class="group-buttons">
+					<button class="button">O</button>
+					<button class="button">X</button>
+					<button class="button">🌯</button>
+					<button class="button">👺</button>
+					<button class="button">🗿</button>
+				</div>
+				<h3>Simbolo del sistema</h3>
+				<div class="group-buttons">
+					<button class="button">O</button>
+					<button class="button">X</button>
+					<button class="button">🌯</button>
+					<button class="button">👺</button>
+					<button class="button">🗿</button>
+				</div>
+			</article>
+		</section>
+
+		<section class="modal" id="modal-historial">
+			<article class="contenedor">
+				<h2>Historial</h2>
+				<div class="registro">
+					<div class="cabecera activado">
+						<span class="left">
+							<i id="txt-icono-registro" class="fi fi-rr-angle-small-down"></i>
+							<span id="txt-fecha-registro">02/08/2004</span>
+						</span>
+						<span id="Puntuacion" class="rigth">8-7</span>
+					</div>
+					<ul class="lista">
+						<li class="item">
+							<div class="cont-flex">
+								<span id="txt-nombre-ganador">Sistema</span>
+								<span id="txt-hora"> - 8:10 am</span>
+							</div>
+						</li>
+						<li class="item">
+							<div class="cont-flex">
+								<span id="txt-nombre-ganador">Empate</span>
+								<span id="txt-hora"> - 8:10 am</span>
+							</div>
+						</li>
+						<li class="item">
+							<div class="cont-flex">
+								<span id="txt-nombre-ganador">Adrian Tafoya</span>
+								<span id="txt-hora"> - 8:10 am</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="registro">
+					<div class="cabecera">
+						<span class="left">
+							<i id="txt-icono-registro" class="fi fi-rr-angle-small-right"></i>
+							<span id="txt-fecha-registro">02/08/2004</span>
+						</span>
+						<span id="Puntuacion" class="rigth">8-7</span>
+					</div>
+					<ul class="lista oculta">
+						<li class="item">
+							<div class="cont-flex">
+								<span id="txt-nombre-ganador">Sistema</span>
+								<span id="txt-hora"> - 8:10 am</span>
+							</div>
+						</li>
+						<li class="item">
+							<div class="cont-flex">
+								<span id="txt-nombre-ganador">Empate</span>
+								<span id="txt-hora"> - 8:10 am</span>
+							</div>
+						</li>
+						<li class="item">
+							<div class="cont-flex">
+								<span id="txt-nombre-ganador">Adrian Tafoya</span>
+								<span id="txt-hora"> - 8:10 am</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</article>
 		</section>
 	</main>
 
-	<script type="text/javascript" src="js/main.js"></script>
+	<footer class="footer bloque">
+		<small>Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a> <i class="fi fi-rr-display-code"></i></small>
+	</footer>
+
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/logica_juego.js"></script>
 </body>
 </html>

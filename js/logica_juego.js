@@ -30,6 +30,19 @@ let contadorUsuario = 0;
 let contadorSistema = 0;
 
 // Funciones
+function validarPuntuacionInicial() {
+	if (localStorage.getItem('contador-usuario-tictactoe')) {
+		contadorUsuario = parseInt(localStorage.getItem('contador-usuario-tictactoe'));
+	}
+
+	if (localStorage.getItem('contador-sistema-tictactoe')) {
+		contadorSistema = parseInt(localStorage.getItem('contador-sistema-tictactoe'));
+	}
+
+	txtContadorSistema.textContent = contadorSistema;
+	txtContadorUsuario.textContent = contadorUsuario;
+}
+
 function verificarJugadas(jugador) {
 	for (let i = 0; i < jugadasGanadoras.length; i++) {
 		let el = jugadasGanadoras[i];
@@ -51,9 +64,11 @@ function aumentarContador(jugador) {
 	if (jugador === "usuario") {
 		contadorUsuario++
 		txtContadorUsuario.textContent = contadorUsuario;
+		localStorage.setItem('contador-usuario-tictactoe', contadorUsuario);
 	} else if (jugador === "sistema") {
 		contadorSistema++
 		txtContadorSistema.textContent = contadorSistema;
+		localStorage.setItem('contador-sistema-tictactoe', contadorSistema);
 	}
 }
 
@@ -72,10 +87,25 @@ function marcarJugadaGanadora(jugador, casillasGanadoras) {
 
 function volverAJugar() {
 	casillas.forEach(el => {
-		if (el.dataset.jugador) el.removeAttribute('data-jugador');
-		if (el.hasAttribute('disabled')) el.removeAttribute('disabled');
-		if (el.classList.contains('ganadora')) el.classList.remove('ganadora');
-		if (el.textContent !== '') el.textContent = '';
+
+		if (el.textContent !== '') {
+			el.textContent = '';
+		}
+
+		if (el.dataset.jugador) {
+			el.removeAttribute('data-jugador');
+		}
+
+		if (el.hasAttribute('disabled')) {
+			el.removeAttribute('disabled');
+		}
+
+		if (el.classList.contains('presionada') && el.classList.contains('ganadora')) {
+			el.classList.remove('presionada', 'ganadora');
+		} else if (el.classList.contains('presionada')) {
+			el.classList.remove('presionada');
+		}
+
 		jugadaDelUsuario = [];
 	});
 
@@ -115,8 +145,12 @@ function lugarVacio() {
 
 function ponerSimboloDelSistema(indice) {
 	casillas[indice].dataset.jugador = turno;
-	casillas[indice].textContent = simboloDelSistema;
 
+	setTimeout(() => {
+		casillas[indice].textContent = simboloDelSistema;
+		casillas[indice].classList.add('presionada');
+	}, 150);
+	
 	if (verificarJugadas(turno).victoria) {
 		marcarJugadaGanadora(turno, verificarJugadas(turno).jugada);
 	} else {
@@ -178,6 +212,7 @@ function turnoDelSistema() {
 function turnoDelUsuario(e) {
 	if (lugarVacio().bool) {
 		casillas[e.target.dataset.index].textContent = simboloDelUsuario;
+		casillas[e.target.dataset.index].classList.add('presionada');
 		e.target.dataset.jugador = turno;
 		jugadaDelUsuario.push(e.target.dataset.index);
 
@@ -204,6 +239,5 @@ cuadricula.addEventListener('click', (e) => {
 
 btnVolverAJugar.addEventListener('click', volverAJugar);
 
-// En teoria ya funciona pero falta:
-// 1- Hacer que el sistema sea "inteligente" y juegue
-// IMPORTANTE =================>>>>>>>>>>>>>>
+// Llamada de funciones al iniciar
+validarPuntuacionInicial();
