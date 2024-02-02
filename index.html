@@ -5,27 +5,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Gatito</title>
 	<link rel="shortcut icon" href="./img/icono.png" type="image/x-icon">
+	<!-- FONT -->
 	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+	<!--CSS -->
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" href="css/responsive-index.css">
+	<link rel="stylesheet" href="css/responsive-modal.css">
 </head>
 <body>
 	<header class="header">
 		<div class="cont-limite">
 			<div class="logo">
-				<img src="./img/icono.png" alt="Icono de un leon" class="logo__icono">
+				<img src="./img/icono.png" alt="Icono de una computadora" class="logo__icono">
 				<span class="logo__texto">Gatito</span>
 			</div>
 			<div class="botones">
-				<button id="btn-historial" class="boton"><i class="fi fi-rr-ballot"></i></button>
-				<button id="btn-ajustes" class="boton"><i class="fi fi-rr-settings"></i></button>
+				<button id="btn-fullscreen" class="boton"><i class="fi fi-rs-expand"></i></button>
+				<button id="btn-historial" class="boton"><i class="fi fi-rs-ballot"></i></button>
 			</div>
 		</div>
 	</header>
 
 	<main id="main">
+<<<<<<< HEAD
 		<section class="indicadores">
 			<article class="bloque">
 				<div class="avatar">
@@ -48,6 +52,30 @@
 			</article>
 		</section>
 		<div class="contenedor-cuadricula">
+=======
+		<div class="cont-limite">
+			<section class="indicadores">
+				<article class="bloque">
+					<div class="avatar">
+						<img src="./img/avatar/avatar.png" alt="" class="img">
+						<span class="nombre">Bot</span>
+						<span id="txt-simbolo-sistema" class="simbolo">O</span>
+					</div>
+					<div class="marcador">
+						<span id="txt-contador-usuario"></span>-<span id="txt-contador-sistema"></span>
+					</div>
+					<div class="avatar">
+						<img src="./img/avatar/superheroe.png" alt="" class="img">
+						<span id="txt-nombre-usuario" class="nombre">Jugador</span>
+						<span id="txt-simbolo-usuario" class="simbolo">X</span>
+					</div>
+				</article>
+				<article id="contenedor-mensaje" class="mensaje">
+					<p id="txt-mensaje">Has ganado!</p>
+					<button id="btn-volver-a-jugar">Volver a jugar</button>
+				</article>
+			</section>
+>>>>>>> 899d500 (Version 3.1, falta crear el historial)
 			<section id="cuadricula" class="cuadricula">
 				<button class="casilla" data-index="0"></button>
 				<button class="casilla" data-index="1"></button>
@@ -61,129 +89,46 @@
 			</section>
 		</div>
 
-		<section class="modal" id="modal-ajustes">
-			<article class="contenedor">
-				<div class="cont-input">
-					<h2>Ajustes</h2>
-					<button id="btn-guardar-cambios" class="button">Guardar cambios</button>
-				</div>
-				<div class="cont-input">
-					<label for="input-nombre-usuario" class="label">Nombre:</label>
-					<input type="text" name="" id="input-nombre-usuario" class="input" spellcheck="false">
-				</div>
-				<h3>Tema</h3>
-				<div class="group-buttons tres">
-					<button class="button"><i class="fi fi-rr-brightness"></i></button>
-					<button class="button"><i class="fi fi-rr-moon"></i></button>
-					<button class="button"><i class="fi fi-rr-sparkles"></i></button>
-				</div>
-				<h3>Personaje</h3>
-				<div class="group-buttons">
-					<button class="button">
-						<img src="./img/avatar/cyborg.png" alt="Icono de Cyborg" class="img">
-					</button>
-					<button class="button">
-						<img src="./img/avatar/hacker.png" alt="Icono de Hacker" class="img">
-					</button>
-					<button class="button">
-						<img src="./img/avatar/hombre.png" alt="Icono de Hombre" class="img">
-					</button>
-					<button class="button">
-						<img src="./img/avatar/mujer.png" alt="Icono de Mujer" class="img">
-					</button>
-					<button class="button">
-						<img src="./img/avatar/seguridad.png" alt="Icono de Seguridad" class="img">
-					</button>
-				</div>
-				<h3>Simbolo del usuario</h3>
-				<div class="group-buttons">
-					<button class="button">O</button>
-					<button class="button">X</button>
-					<button class="button">🌯</button>
-					<button class="button">👺</button>
-					<button class="button">🗿</button>
-				</div>
-				<h3>Simbolo del sistema</h3>
-				<div class="group-buttons">
-					<button class="button">O</button>
-					<button class="button">X</button>
-					<button class="button">🌯</button>
-					<button class="button">👺</button>
-					<button class="button">🗿</button>
-				</div>
-			</article>
-		</section>
-
 		<section class="modal" id="modal-historial">
 			<article class="contenedor">
+				<h3>Valores por default, esta sección esta en desarrollo!</h3>
 				<h2>Historial</h2>
-				<div class="registro">
-					<div class="cabecera activado">
+				<div id="cont-registros">
+					<div class="registro">
 						<span class="left">
-							<i id="txt-icono-registro" class="fi fi-rr-angle-small-down"></i>
+							<i class="fi fi-rs-hourglass-start"></i>
 							<span id="txt-fecha-registro">02/08/2004</span>
 						</span>
-						<span id="Puntuacion" class="rigth">8-7</span>
+						<span id="Puntuacion" class="rigth">Puntuación => 8-7</span>
 					</div>
-					<ul class="lista">
-						<li class="item">
-							<div class="cont-flex">
-								<span id="txt-nombre-ganador">Sistema</span>
-								<span id="txt-hora"> - 8:10 am</span>
-							</div>
-						</li>
-						<li class="item">
-							<div class="cont-flex">
-								<span id="txt-nombre-ganador">Empate</span>
-								<span id="txt-hora"> - 8:10 am</span>
-							</div>
-						</li>
-						<li class="item">
-							<div class="cont-flex">
-								<span id="txt-nombre-ganador">Adrian Tafoya</span>
-								<span id="txt-hora"> - 8:10 am</span>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="registro">
-					<div class="cabecera">
+					<div class="registro">
 						<span class="left">
-							<i id="txt-icono-registro" class="fi fi-rr-angle-small-right"></i>
+							<i class="fi fi-rs-hourglass-start"></i>
 							<span id="txt-fecha-registro">02/08/2004</span>
 						</span>
-						<span id="Puntuacion" class="rigth">8-7</span>
+						<span id="Puntuacion" class="rigth">Puntuación => 8-7</span>
 					</div>
-					<ul class="lista oculta">
-						<li class="item">
-							<div class="cont-flex">
-								<span id="txt-nombre-ganador">Sistema</span>
-								<span id="txt-hora"> - 8:10 am</span>
-							</div>
-						</li>
-						<li class="item">
-							<div class="cont-flex">
-								<span id="txt-nombre-ganador">Empate</span>
-								<span id="txt-hora"> - 8:10 am</span>
-							</div>
-						</li>
-						<li class="item">
-							<div class="cont-flex">
-								<span id="txt-nombre-ganador">Adrian Tafoya</span>
-								<span id="txt-hora"> - 8:10 am</span>
-							</div>
-						</li>
-					</ul>
+					<div class="registro">
+						<span class="left">
+							<i class="fi fi-rs-hourglass-start"></i>
+							<span id="txt-fecha-registro">02/08/2004</span>
+						</span>
+						<span id="Puntuacion" class="rigth">Puntuación => 8-7</span>
+					</div>
 				</div>
 			</article>
 		</section>
 	</main>
 
-	<footer class="footer bloque">
-		<small>Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a> <i class="fi fi-rr-display-code"></i></small>
-	</footer>
+	<div class="cont-limite">
+		<footer class="footer bloque">
+			<small>Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a> <i class="fi fi-rs-display-code"></i></small>
+		</footer>
+	</div>
 
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/logica_juego.js"></script>
+	<script type="text/javascript" src="js/full_screen.js"></script>
+	<script type="text/javascript" src="js/historial.js"></script>
 </body>
 </html>

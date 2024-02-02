@@ -17,7 +17,7 @@ section.modal {
 
 	& article.contenedor {
 		max-width: calc(100dvw - 15px);
-		width: 800px;
+		width: 700px;
 		margin: auto;
 
 
@@ -149,95 +149,42 @@ section.modal {
 		}
 
 		& div.registro {
+			padding: .2em .5em;
 
-			& div.cabecera {
-				padding: .2em .5em;
+			display: flex;
+			justify-content: space-between;
 
+			border: 1px solid #000;
+			border-top: none;
+			background-color: #fff;
+
+			& span.left {
 				display: flex;
-				justify-content: space-between;
+				flex-direction: row;
+				align-items: center;
 
-				border-radius: 3px;
-				border: 2px solid #000;
-				box-shadow: 4px 4px 0px #00000050;
-				background-color: #fff;
-
-				& span.left {
+				& i {
+					margin-right: 5px;
+					
 					display: flex;
 					flex-direction: row;
 					align-items: center;
-
-					& i {
-						margin-right: 5px;
-						
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-					}
 				}
 			}
-			& div.cabecera.activado {
-				/* background-color: #000; */
-				border-bottom: none;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-			}
-
-			& ul.lista {
-				padding: .5em .5em .5em 2.25em;
-
-				background-color: #f9f9f9;
-				border-bottom-left-radius: 4px;
-				border-bottom-right-radius: 4px;
-				box-shadow: 0px 0px 0px #00000050;
-				border-top: 3px solid #444;
-				border-left: 3px solid #444;
-				border-bottom: 1px solid #333;
-				border-right: 1px solid #333;
-
-
-				& li.item:not(:last-child) {
-					margin-bottom: .3em;
-				}
-				& li.item {
-					list-style: georgian;
-
-					& div.cont-flex {
-						display: flex;
-						justify-content: space-between
-					}
-				}
-			}
-			& ul.lista.oculta {
-				display: none;
-			}
+			
 		}
-
-		& div.registro:not(:last-child) {
-			margin-bottom: 1em;
+		div.registro:first-child {
+			border-top: 1px solid #000;
+			border-top-right-radius: 3px;
+			border-top-left-radius: 3px;
+		}
+		& div.registro:last-child {
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
 		}
 	}
 }
 
 section.modal.mostrar {
 	display: block;
-}
-
-
-@media screen and (max-width: 540px) {
-	section.modal article.contenedor div.group-buttons button.button {
-		font-size: 10.8vw;
-		/* 54% */
-	}
-}
-
-@media screen and (max-width: 359px) {
-	& div.cont-input {
-		flex-wrap: wrap;
-
-
-		& input.input {
-			width: 100%;
-			margin-top: 5px;
-		}
-	}
 }

@@ -1,0 +1,18 @@
+@media screen and (max-width: 540px) {
+	section.modal article.contenedor div.group-buttons button.button {
+		font-size: 10.8vw;
+		/* 54% */
+	}
+}
+
+@media screen and (max-width: 359px) {
+	& div.cont-input {
+		flex-wrap: wrap;
+
+
+		& input.input {
+			width: 100%;
+			margin-top: 5px;
+		}
+	}
+}

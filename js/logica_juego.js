@@ -31,13 +31,13 @@ let contadorSistema = 0;
 
 // Funciones
 function validarPuntuacionInicial() {
-	if (localStorage.getItem('contador-usuario-tictactoe')) {
-		contadorUsuario = parseInt(localStorage.getItem('contador-usuario-tictactoe'));
-	}
+	// if (localStorage.getItem('contador-usuario-tictactoe')) {
+	// 	contadorUsuario = parseInt(localStorage.getItem('contador-usuario-tictactoe'));
+	// }
 
-	if (localStorage.getItem('contador-sistema-tictactoe')) {
-		contadorSistema = parseInt(localStorage.getItem('contador-sistema-tictactoe'));
-	}
+	// if (localStorage.getItem('contador-sistema-tictactoe')) {
+	// 	contadorSistema = parseInt(localStorage.getItem('contador-sistema-tictactoe'));
+	// }
 
 	txtContadorSistema.textContent = contadorSistema;
 	txtContadorUsuario.textContent = contadorUsuario;
@@ -79,9 +79,9 @@ function marcarJugadaGanadora(jugador, casillasGanadoras) {
 	aumentarContador(jugador);
 
 	if (jugador === "sistema") {
-		mostrarMensaje(true, "Has perdido, el código si es bueno!! 🤖");
+		mostrarMensaje(true, "GAME OVER!! 🤖");
 	} else if (jugador === "usuario") {
-		mostrarMensaje(true, "Le has ganado al código!! 👀");
+		mostrarMensaje(true, "HAS GANADO!");
 	}
 }
 
@@ -149,13 +149,16 @@ function ponerSimboloDelSistema(indice) {
 	setTimeout(() => {
 		casillas[indice].textContent = simboloDelSistema;
 		casillas[indice].classList.add('presionada');
-	}, 150);
+		console.log("PRESIOADA")
+
+		if (verificarJugadas(turno).victoria) {
+			marcarJugadaGanadora(turno, verificarJugadas(turno).jugada);
+			console.log("GANASTE")
 	
-	if (verificarJugadas(turno).victoria) {
-		marcarJugadaGanadora(turno, verificarJugadas(turno).jugada);
-	} else {
-		turno = "usuario";
-	}
+		} else {
+			turno = "usuario";
+		}
+	}, 160);
 }
 
 function jaque(jugador) {
@@ -224,7 +227,7 @@ function turnoDelUsuario(e) {
 		}
 	} else {
 		deshabilitarCasillas();
-		mostrarMensaje(true, "Empate!!, se han quedado sin espacios");
+		mostrarMensaje(true, "Es un empate!");
 		turno = "sistema";
 	}
 }
