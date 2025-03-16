@@ -1,109 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gatito</title>
-	<link rel="shortcut icon" href="./img/icono.png" type="image/x-icon">
-	<!-- FONT -->
-	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-	<!--CSS -->
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/modal.css">
-	<link rel="stylesheet" href="css/responsive-index.css">
-	<link rel="stylesheet" href="css/responsive-modal.css">
-</head>
-<body>
-	<header class="header">
-		<div class="cont-limite">
-			<div class="logo">
-				<img src="./img/icono.png" alt="Icono de una computadora" class="logo__icono">
-				<span class="logo__texto">Gatito</span>
-			</div>
-			<div class="botones">
-				<button id="btn-fullscreen" class="boton"><i class="fi fi-rs-expand"></i></button>
-				<button id="btn-historial" class="boton"><i class="fi fi-rs-ballot"></i></button>
-			</div>
-		</div>
-	</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gatito</title>
+    <link rel="shortcut icon" href="./img/icono.png" type="image/x-icon" />
+    <!-- FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!--CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/responsive-index.css" />
+    <link rel="stylesheet" href="css/responsive-modal.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="cont-limite">
+        <div class="logo">
+          <img
+            src="./img/icono.png"
+            alt="Icono de una computadora"
+            class="logo__icono"
+          />
+          <span class="logo__texto">Gatito</span>
+        </div>
+        <div class="botones">
+          <button id="btn-fullscreen" class="boton">
+            <i class="fi fi-rs-expand"></i>
+          </button>
+        </div>
+      </div>
+    </header>
 
-	<main id="main">
-		<div class="cont-limite">
-			<section class="indicadores">
-				<article class="bloque">
-					<div class="avatar">
-						<img src="./img/avatar/avatar.png" alt="" class="img">
-						<span class="nombre">Bot</span>
-						<span id="txt-simbolo-sistema" class="simbolo">O</span>
-					</div>
-					<div class="marcador">
-						<span id="txt-contador-usuario"></span>-<span id="txt-contador-sistema"></span>
-					</div>
-					<div class="avatar">
-						<img src="./img/avatar/superheroe.png" alt="" class="img">
-						<span id="txt-nombre-usuario" class="nombre">Jugador</span>
-						<span id="txt-simbolo-usuario" class="simbolo">X</span>
-					</div>
-				</article>
-				<article id="contenedor-mensaje" class="mensaje">
-					<p id="txt-mensaje">Has ganado!</p>
-					<button id="btn-volver-a-jugar">Volver a jugar</button>
-				</article>
-			</section>
-			<section id="cuadricula" class="cuadricula">
-				<button class="casilla" data-index="0"></button>
-				<button class="casilla" data-index="1"></button>
-				<button class="casilla" data-index="2"></button>
-				<button class="casilla" data-index="3"></button>
-				<button class="casilla" data-index="4"></button>
-				<button class="casilla" data-index="5"></button>
-				<button class="casilla" data-index="6"></button>
-				<button class="casilla" data-index="7"></button>
-				<button class="casilla" data-index="8"></button>
-			</section>
-		</div>
+    <main id="main">
+      <div class="cont-limite">
+        <section class="indicadores">
+          <article class="bloque">
+            <div class="avatar">
+              <img
+                src="./img/avatar/superheroe.png"
+                alt="Icono del jugador"
+                class="img"
+              />
+              <span id="txt-nombre-usuario" class="nombre">P1</span>
+              <span id="txt-simbolo-usuario" class="simbolo">o</span>
+            </div>
+            <div class="marcador">
+              <span id="txt-contador-usuario">0</span>
+              <span>-</span>
+              <span id="txt-contador-sistema">0</span>
+            </div>
+            <div class="avatar">
+              <img
+                src="./img/avatar/avatar.png"
+                alt="Icono del sistema"
+                class="img"
+              />
+              <span class="nombre">SISTEMA</span>
+              <span id="txt-simbolo-sistema" class="simbolo">!=</span>
+            </div>
+          </article>
+        </section>
+        <section id="cuadricula" class="cuadricula">
+          <button class="casilla" data-index="0"></button>
+          <button class="casilla" data-index="1"></button>
+          <button class="casilla" data-index="2"></button>
+          <button class="casilla" data-index="3"></button>
+          <button class="casilla" data-index="4"></button>
+          <button class="casilla" data-index="5"></button>
+          <button class="casilla" data-index="6"></button>
+          <button class="casilla" data-index="7"></button>
+          <button class="casilla" data-index="8"></button>
+        </section>
+      </div>
+    </main>
 
-		<section class="modal" id="modal-historial">
-			<article class="contenedor">
-				<h3>Valores por default, esta sección esta en desarrollo!</h3>
-				<h2>Historial</h2>
-				<div id="cont-registros">
-					<div class="registro">
-						<span class="left">
-							<i class="fi fi-rs-hourglass-start"></i>
-							<span id="txt-fecha-registro">02/08/2004</span>
-						</span>
-						<span id="Puntuacion" class="rigth">Puntuación => 8-7</span>
-					</div>
-					<div class="registro">
-						<span class="left">
-							<i class="fi fi-rs-hourglass-start"></i>
-							<span id="txt-fecha-registro">02/08/2004</span>
-						</span>
-						<span id="Puntuacion" class="rigth">Puntuación => 8-7</span>
-					</div>
-					<div class="registro">
-						<span class="left">
-							<i class="fi fi-rs-hourglass-start"></i>
-							<span id="txt-fecha-registro">02/08/2004</span>
-						</span>
-						<span id="Puntuacion" class="rigth">Puntuación => 8-7</span>
-					</div>
-				</div>
-			</article>
-		</section>
-	</main>
+    <div class="cont-limite">
+      <footer class="footer bloque">
+        <small
+          >Desarrollado por
+          <a href="https://github.com/adriantaf" class="link">Adrian TM</a>
+          <i class="fi fi-rs-display-code"></i
+        ></small>
+      </footer>
+    </div>
 
-	<div class="cont-limite">
-		<footer class="footer bloque">
-			<small>Desarrollado por <a href="https://github.com/adriantaf" class="link">Adrian TM</a> <i class="fi fi-rs-display-code"></i></small>
-		</footer>
-	</div>
+    <template id="template-modal">
+      <section id="modal" class="modal">
+        <article id="contenedor-mensaje" class="mensaje">
+          <p id="txt-mensaje">Has ganado!</p>
+          <button id="btn-volver-a-jugar">Volver a jugar</button>
+        </article>
+      </section>
+    </template>
 
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/logica_juego.js"></script>
-	<script type="text/javascript" src="js/full_screen.js"></script>
-	<script type="text/javascript" src="js/historial.js"></script>
-</body>
+    <script type="text/javascript" type="module" src="js/modal.js"></script>
+    <script
+      type="text/javascript"
+      type="module"
+      src="js/logica_juego.js"
+    ></script>
+    <script
+      type="text/javascript"
+      type="module"
+      src="js/full_screen.js"
+    ></script>
+  </body>
 </html>

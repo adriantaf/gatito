@@ -1,190 +1,34 @@
-section.modal {
-	height: calc(100dvh - 60px);
-	width: 100%;
-	padding: 1.5em 0;
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: #fff;
 
-	display: none;
+  & article.mensaje {
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 1em;
 
-	position: absolute;
-	top: 60px;
-	left: 0;
+    & button {
+      color: #fff;
+      font-size: 0.8em;
+      font-weight: 600;
+      background-color: #3d73e9;
+      border-radius: 3px;
+      transform: translateX(-3px) translateY(-3px);
+      box-shadow: 3px 3px 0px #00000050;
+      margin-top: 1em;
+      border: 1px solid #000;
+      padding: 0.5em 0.75em;
+    }
 
-	white-space: nowrap;
-	overflow-y: auto;
-
-	background-color: #f6f6f6;
-	
-
-	& article.contenedor {
-		max-width: calc(100dvw - 15px);
-		width: 700px;
-		margin: auto;
-
-
-		& h2 {
-			margin-bottom: .8em;
-		}
-
-		& div.cont-input {
-			max-width: 100%;
-			margin-bottom: 1.3em;
-
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-
-
-			& h2 {
-				margin-bottom: 0;
-			}
-
-			& label.label {
-				margin-right: .3em;
-				font-size: 1.1em;
-			}
-
-			& input.input {
-				padding: 3px;
-
-				flex: auto;
-				font-size: 1.1em;
-				line-height: 0;
-				border-radius: 3px;
-				border: 2px solid #000;
-				box-shadow: 4px 4px 0px #00000050;
-				transform: translateX(-4px) translateY(-4px);
-				background-color: #fff;			
-				text-align: center;	
-				caret-color: #e22b2b;
-			}
-
-			& input.input:focus {
-				outline: none;
-				background-color: #fafafa;
-				animation-name: btn-header;
-				animation-duration: .1s;
-				animation-fill-mode: forwards;
-				animation-timing-function: ease-out;
-			}
-
-			& button.button {
-				padding: 1em .5em;
-
-				line-height: 0;
-				font-size: .85em;
-				border-radius: 3px;
-				border: 2px solid #000;
-				box-shadow: 3px 3px 0px #00000050;
-				transform: translateX(-3px) translateY(-3px);
-				background-color: #fa3636;
-				color: #fff;
-				font-weight: 700;
-
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			& button.button:active {
-				box-shadow: 0px 0px 0px #00000050;
-				transform: translateX(0) translateY(0);
-				background-color: #ec3030;
-			}
-		}
-
-		& div.group-buttons {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-			padding: .5em 0;
-			margin-bottom: 1.3em;
-
-			& button.button {
-				width: calc((100% - 40px) / 5);
-				aspect-ratio: 1/1;
-
-				line-height: 0;
-				font-size: 4em;
-				border-radius: 3px;
-				border: 2px solid #000;
-				box-shadow: 3px 3px 0px #00000050;
-				transform: translateX(-3px) translateY(-3px);
-				background-color: #fff;
-
-				display: flex;
-				align-items: center;
-				justify-content: center;
-
-				& img.img {
-					width: 75%;
-				}
-			}
-
-			@media (hover: hover) {
-				button.button:hover {
-					background-color: #edffd7;
-				}
-			}
-
-			& button.button:active {
-				box-shadow: 0px 0px 0px #00000050;
-				transform: translateX(0) translateY(0);
-				background-color: #fafafa;
-			}
-		}
-
-		& div.group-buttons:last-child {
-			margin-bottom: 0;
-		}
-
-		& div.group-buttons.tres {
-			justify-content: flex-start;
-
-
-			& button.button {
-				margin-right: 10px;
-			}
-		}
-
-		& div.registro {
-			padding: .2em .5em;
-
-			display: flex;
-			justify-content: space-between;
-
-			border: 1px solid #000;
-			border-top: none;
-			background-color: #fff;
-
-			& span.left {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-
-				& i {
-					margin-right: 5px;
-					
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-				}
-			}
-			
-		}
-		div.registro:first-child {
-			border-top: 1px solid #000;
-			border-top-right-radius: 3px;
-			border-top-left-radius: 3px;
-		}
-		& div.registro:last-child {
-			border-bottom-right-radius: 3px;
-			border-bottom-left-radius: 3px;
-		}
-	}
-}
-
-section.modal.mostrar {
-	display: block;
+    & button:active {
+      box-shadow: none;
+      transform: translateX(0px) translateY(0px);
+      background-color: #3d73e9;
+    }
+  }
 }

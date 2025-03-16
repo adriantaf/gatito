@@ -1,81 +1,80 @@
 @media screen and (max-width: 1085px) {
-	main {
-		padding: 1em 0;
+  main {
+    padding: 1em 0;
 
-		& section.indicadores {
-			max-width: 100%;
-			width: 500px;
-			margin-right: 0;
-		}
-	}
+    & section.indicadores {
+      max-width: 100%;
+      width: 500px;
+      margin-right: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 540px) {
-	.header > .cont-limite {
-		.logo {
-			.logo__icono {
-				height: 35px;
-				margin-right: .5em;
-			}
+  .header > .cont-limite {
+    .logo {
+      .logo__icono {
+        height: 35px;
+        margin-right: 0.5em;
+      }
 
-			.logo__texto {
-				font-size: 1.6em;
-			}
-		}
+      .logo__texto {
+        font-size: 1.6em;
+      }
+    }
 
-		.botones {
-			.boton {
-				height: 40px;
-				font-size: 1.5em;
-			}
-		}
-	}
+    .botones {
+      .boton {
+        height: 40px;
+        font-size: 1.5em;
+      }
+    }
+  }
 
+  main {
+    section.indicadores {
+      max-width: 100%;
+      width: 500px;
+      margin-right: 0;
+      margin-bottom: 1em;
 
-	main {
+      article.bloque {
+        font-size: 1.05em;
 
-		section.indicadores {
-			max-width: 100%;
-			width: 500px;
-			margin-right: 0;
-			margin-bottom: 1em;
-	
-			article.bloque {
-				font-size: 1.05em;
+        div.avatar {
+          width: 36%;
+          padding-top: 5px;
 
-				div.avatar {
-					width: 36%;
-					padding-top: 5px;
-		
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					align-items: center;
-					flex: auto;
-		
-					img.img {
-						height: 45px;
-					}
-				}
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          flex: auto;
 
-				div.macador {
-					font-size: 1.05em;
-					margin: 0 .7em;
-					font-weight: 500;
-				}
-			}
-	
-			& article.mensaje {
-				font-size: 1em;
-			}
-		}
+          img.img {
+            height: 45px;
+          }
+        }
 
-		section.cuadricula > button.casilla {
-			font-size: 18vw;
-		}
-	}
+        div.macador {
+          font-size: 1.05em;
+          margin: 0 0.7em;
+          font-weight: 500;
+        }
+      }
 
-	.footer {
-		font-size: 0.9em;
-	}
+      & article.mensaje {
+        font-size: 1em;
+      }
+    }
+
+    section.cuadricula > button.casilla {
+      font-size: 15vw;
+      max-width: 100%;
+    }
+  }
+
+  .footer {
+    font-size: 0.9em;
+  }
 }
