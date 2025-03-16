@@ -24,11 +24,6 @@
     <header class="header">
       <div class="cont-limite">
         <div class="logo">
-          <img
-            src="./img/icono.png"
-            alt="Icono de una computadora"
-            class="logo__icono"
-          />
           <span class="logo__texto">Gatito</span>
         </div>
         <div class="botones">
@@ -50,7 +45,7 @@
                 class="img"
               />
               <span id="txt-nombre-usuario" class="nombre">P1</span>
-              <span id="txt-simbolo-usuario" class="simbolo">o</span>
+              <span id="txt-simbolo-usuario" class="simbolo">🐭</span>
             </div>
             <div class="marcador">
               <span id="txt-contador-usuario">0</span>
@@ -64,7 +59,7 @@
                 class="img"
               />
               <span class="nombre">SISTEMA</span>
-              <span id="txt-simbolo-sistema" class="simbolo">!=</span>
+              <span id="txt-simbolo-sistema" class="simbolo">🐱‍👤</span>
             </div>
           </article>
         </section>
@@ -95,22 +90,14 @@
     <template id="template-modal">
       <section id="modal" class="modal">
         <article id="contenedor-mensaje" class="mensaje">
-          <p id="txt-mensaje">Has ganado!</p>
+          <p id="txt-mensaje" class="texto">Has ganado!</p>
           <button id="btn-volver-a-jugar">Volver a jugar</button>
         </article>
       </section>
     </template>
 
-    <script type="text/javascript" type="module" src="js/modal.js"></script>
-    <script
-      type="text/javascript"
-      type="module"
-      src="js/logica_juego.js"
-    ></script>
-    <script
-      type="text/javascript"
-      type="module"
-      src="js/full_screen.js"
-    ></script>
+    <!-- <script type="module" src="js/modal.js"></script> -->
+    <script type="module" src="js/logica_juego.js"></script>
+    <!-- <script type="module" src="js/full_screen.js"></script> -->
   </body>
 </html>

@@ -1,12 +1,10 @@
 "use strict";
 
+import { showModal } from "./modal.js";
+
 // Elementos HTML
-const main = document.querySelector("#main");
 const casillas = document.querySelectorAll(".casilla");
 const cuadricula = document.querySelector("#cuadricula");
-const contenedorMensaje = document.querySelector("#contenedor-mensaje");
-const btnVolverAJugar = document.querySelector("#btn-volver-a-jugar");
-const txtMensaje = document.querySelector("#txt-mensaje");
 const txtContadorUsuario = document.querySelector("#txt-contador-usuario");
 const txtContadorSistema = document.querySelector("#txt-contador-sistema");
 
@@ -25,8 +23,8 @@ const turnoInicial = "usuario";
 let jugadaDelUsuario = [];
 let jugadaDelSistema = [];
 let turno = turnoInicial;
-let simboloDelSistema = "!=";
-let simboloDelUsuario = "o";
+let simboloDelSistema = "🐱‍👤";
+let simboloDelUsuario = "🐭";
 let contadorUsuario = 0;
 let contadorSistema = 0;
 
@@ -71,17 +69,19 @@ function aumentarContador(jugador) {
 function marcarJugadaGanadora(jugador, casillasGanadoras) {
   casillasGanadoras.forEach((el) => casillas[el].classList.add("ganadora"));
 
-  deshabilitarCasillas();
-  aumentarContador(jugador);
+  setTimeout(() => {
+    deshabilitarCasillas();
+    aumentarContador(jugador);
 
-  if (jugador === "sistema") {
-    mostrarMensaje(true, "GAME OVER!! 🤖");
-  } else if (jugador === "usuario") {
-    mostrarMensaje(true, "HAS GANADO!");
-  }
+    if (jugador === "sistema") {
+      mostrarMensaje(true, "GAME OVER!! 🤖");
+    } else if (jugador === "usuario") {
+      mostrarMensaje(true, "HAS GANADO!");
+    }
+  }, 300);
 }
 
-function volverAJugar() {
+export function volverAJugar() {
   casillas.forEach((el) => {
     if (el.textContent !== "") {
       el.textContent = "";

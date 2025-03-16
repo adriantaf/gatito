@@ -1,12 +1,7 @@
-*:after,
-*:before,
-* {
-  box-sizing: border-box;
-}
-
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -15,6 +10,7 @@ body {
   min-height: 100dvh;
   background-color: #f6f6f6;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
@@ -105,10 +101,17 @@ body {
 }
 
 main {
-  height: auto;
+  height: 100%;
   max-width: calc(100% - 15px);
-  padding: 2rem 0;
+  padding: 1rem 0;
   margin-bottom: auto;
+
+  .cont-limite {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 section.indicadores {
