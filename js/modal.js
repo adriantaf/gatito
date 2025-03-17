@@ -12,7 +12,6 @@ export function showModal(message) {
     volverAJugar();
     closeModal();
   });
-  console.log(clone.firstElementChild);
 
   BODY.prepend(clone.firstElementChild);
 }

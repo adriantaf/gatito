@@ -1,5 +1,6 @@
 "use strict";
 
+import { btnFullScreen } from "./full_screen.js";
 import { showModal } from "./modal.js";
 
 // Elementos HTML
@@ -23,7 +24,7 @@ const turnoInicial = "usuario";
 let jugadaDelUsuario = [];
 let jugadaDelSistema = [];
 let turno = turnoInicial;
-let simboloDelSistema = "🐱‍👤";
+let simboloDelSistema = "🐱";
 let simboloDelUsuario = "🐭";
 let contadorUsuario = 0;
 let contadorSistema = 0;
@@ -146,11 +147,9 @@ function ponerSimboloDelSistema(indice) {
   setTimeout(() => {
     casillas[indice].textContent = simboloDelSistema;
     casillas[indice].classList.add("presionada");
-    console.log("PRESIOADA");
 
     if (verificarJugadas(turno).victoria) {
       marcarJugadaGanadora(turno, verificarJugadas(turno).jugada);
-      console.log("GANASTE");
     } else {
       turno = "usuario";
     }
@@ -253,3 +252,4 @@ cuadricula.addEventListener("click", (e) => {
 
 // Llamada de funciones al iniciar
 validarPuntuacionInicial();
+btnFullScreen;
